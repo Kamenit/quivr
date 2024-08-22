@@ -1,5 +1,13 @@
 from fastapi.middleware.cors import CORSMiddleware
 
+
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+
+
+
 origins = [
     "http://localhost",
     "http://localhost:3000",
@@ -9,6 +17,7 @@ origins = [
     "http://quivr.app",
     "http://www.quivr.app",
     "https://chat.quivr.app",
+    os.getenv("NEXT_PUBLIC_FRONTEND_URL", ""),
     "*",
 ]
 
